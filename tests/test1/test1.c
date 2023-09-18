@@ -3,7 +3,8 @@
 int	ft_printf(char const *str, ...);
 
 int	main(void)
-{ 
+{
+	printf("----Start of first tests of ft_printf----\n");
 	ft_printf("%c\n", 'a');
 	ft_printf("%s\n", "abc");
 //	ft_printf("%p\n", 10);
@@ -24,5 +25,6 @@ int	main(void)
 	printf("%x\n", 15);
 	printf("%X\n", 15);
 	printf("%%\n");*/
+	printf("---- End of first tests of ft_printf ----\n");
 	return (0);
 }
