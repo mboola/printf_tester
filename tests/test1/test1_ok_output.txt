@@ -1,7 +1,32 @@
-a
-abc
-10
-123
-f
-F
-%
+----Start of first tests of ft_printf----
+(c) Char: a
+(c) Non-ascii char: a
+(s) String: abc
+(s) Empty string: 
+(i) Normal int: 42
+(i) Zero: 0
+(i) Negative int: -42
+(i) Max int: 2147483647
+(i) Min int: -2147483648
+(d) Normal int: 42
+(d) Zero: 0
+(d) Negative int: -42
+(d) Max int: 2147483647
+(d) Min int: -2147483648
+(u) Normal int: 42
+(u) Zero: 0
+(u) Negative int: 4294967254
+(u) Max int: 2147483647
+(u) Min int: 2147483648
+(x) Normal int: 2a
+(x) Zero: 0
+(x) Negative int: ffffffd6
+(x) Max int: 7fffffff
+(x) Min int: 80000000
+(X) Normal int: 2A
+(X) Zero: 0
+(X) Negative int: FFFFFFD6
+(X) Max int: 7FFFFFFF
+(X) Min int: 80000000
+Percent: %
+---- End of first tests of ft_printf ----
