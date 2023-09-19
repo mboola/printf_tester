@@ -7,10 +7,8 @@ int	main(void)
 	int	zero = 0;
 	int	max_int = 2147483647;
 	int	min_int = -2147483648;
-//	int max_unsigned_int = 4294967295;
 
-	ft_printf("----Start of first tests of ft_printf----\n");
-
+	ft_printf("----Start of all simple tests of ft_printf----\n");
 	ft_printf("(c) Char: %c\n", 'a');
 	ft_printf("(c) Non-ascii char: %c\n", 'a');
 	ft_printf("(s) String: %s\n", "abc");
@@ -41,7 +39,6 @@ int	main(void)
 	ft_printf("(X) Max int: %X\n", max_int);
 	ft_printf("(X) Min int: %X\n", min_int);
 	ft_printf("Percent: %%\n");
-
-	ft_printf("---- End of first tests of ft_printf ----\n");
+	ft_printf("---- End of all simple tests of ft_printf ----\n");
 	return (0);
 }

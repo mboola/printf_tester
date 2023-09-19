@@ -1,1 +1,5 @@
-test
+----Start of complex tests of ft_printf----
+Count of output with empty string: 1
+0Count of output with one int: 1
+---- End of complex tests of ft_printf ----
+0
