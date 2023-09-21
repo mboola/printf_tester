@@ -49,10 +49,18 @@ BONUS2_USER_OUTPUT = ${BONUS2_DIR}/bonus2_user_output.txt
 BONUS2_OK_OUTPUT = ${BONUS2_DIR}/bonus2_ok_output.txt
 BONUS2_RESULT = ${BONUS2_DIR}/bonus2_result.txt
 
-TESTS_USER = ${TEST1_USER_OUTPUT} ${TEST2_USER_OUTPUT} ${TEST3_USER_OUTPUT} ${BONUS1_USER_OUTPUT} ${BONUS2_USER_OUTPUT}
-TESTS_EXE = ${TEST1} ${TEST2} ${TEST3} ${BONUS1} ${BONUS2}
-RESULTS = ${TEST1_RESULT} ${TEST2_RESULT} ${TEST3_RESULT} ${BONUS1_RESULT} ${BONUS2_RESULT}
-OBJ = ${OBJ_TEST1} ${OBJ_TEST2} ${OBJ_TEST3} ${OBJ1_BONUS} ${OBJ2_BONUS}
+BONUS3_DIR = ${BONUS_DIR}/bonus3
+BONUS3_FILE = ${BONUS3_DIR}/bonus3.c
+OBJ3_BONUS = ${BONUS3_FILE:.c=.o}
+BONUS3 = bonus3_exe
+BONUS3_USER_OUTPUT = ${BONUS3_DIR}/bonus3_user_output.txt
+BONUS3_OK_OUTPUT = ${BONUS3_DIR}/bonus3_ok_output.txt
+BONUS3_RESULT = ${BONUS3_DIR}/bonus3_result.txt
+
+TESTS_USER = ${TEST1_USER_OUTPUT} ${TEST2_USER_OUTPUT} ${TEST3_USER_OUTPUT} ${BONUS1_USER_OUTPUT} ${BONUS2_USER_OUTPUT} ${BONUS3_USER_OUTPUT}
+TESTS_EXE = ${TEST1} ${TEST2} ${TEST3} ${BONUS1} ${BONUS2} ${BONUS3}
+RESULTS = ${TEST1_RESULT} ${TEST2_RESULT} ${TEST3_RESULT} ${BONUS1_RESULT} ${BONUS2_RESULT} ${BONUS3_RESULT}
+OBJ = ${OBJ_TEST1} ${OBJ_TEST2} ${OBJ_TEST3} ${OBJ1_BONUS} ${OBJ2_BONUS} ${OBJ3_BONUS}
 
 #RULES
 
@@ -74,8 +82,11 @@ ${BONUS1}: ${OBJ1_BONUS}
 	${GCC} -o $@ $< ${LIB_INSTRUCTION}
 ${BONUS2}: ${OBJ2_BONUS}
 	${GCC} -o $@ $< ${LIB_INSTRUCTION}
+${BONUS3}: ${OBJ3_BONUS}
+	${GCC} -o $@ $< ${LIB_INSTRUCTION}
+
 # runs all tests
-run: test1 test2 test3 bonus1 bonus2
+run: test1 test2 test3 bonus1 bonus2 bonus3
 
 # runs first tests
 test1: ${TEST1}
@@ -98,6 +109,10 @@ bonus2: ${BONUS2}
 	./$< > ${BONUS2_USER_OUTPUT}
 	-diff -s ${BONUS2_USER_OUTPUT} ${BONUS2_OK_OUTPUT} > ${BONUS2_RESULT}
 
+bonus3: ${BONUS3}
+	./$< > ${BONUS3_USER_OUTPUT}
+	-diff -s ${BONUS3_USER_OUTPUT} ${BONUS3_OK_OUTPUT} > ${BONUS3_RESULT}
+
 # others
 clean:
 	rm -f ${OBJ}
@@ -113,4 +128,4 @@ display:
 results:
 	cat ${RESULTS}
 
-.PHONY: all bonus run clean fclean test1 test2 test3 display results
+.PHONY: all run clean fclean test1 test2 test3 bonus1 bonus2 bonus3 display results
