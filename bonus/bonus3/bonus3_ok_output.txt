@@ -1,4 +1,4 @@
-----Start of all bonus tests of printf----
+----Start of all bonus tests '0' of printf----
 (d & 0):42|| len = 2
 (d & 01):42|| len = 2
 (d & 02):42|| len = 2
@@ -24,4 +24,4 @@
 (X & 02):2A|| len = 2
 (X & 03):02A|| len = 3
 (X & 010):000000002A|| len = 10
----- End of all bonus tests of printf ----
+---- End of all bonus tests '0' of printf ----

@@ -1,4 +1,4 @@
-----Start of all bonus tests of printf----
+----Start of all bonus tests '.' of printf----
 (s & .) :|| len = 0
 (s & .0):|| len = 0
 (s & .1):0|| len = 1
@@ -29,4 +29,4 @@
 (X & .1):2A|| len = 2
 (X & .2):2A|| len = 2
 (X & .3):02A|| len = 3
----- End of all bonus tests of printf ----
+---- End of all bonus tests '.' of printf ----

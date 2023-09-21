@@ -6,7 +6,7 @@ int	main(void)
 {
 	int	len;
 
-	printf("----Start of all bonus tests of printf----\n");
+	printf("----Start of all bonus tests '.' of printf----\n");
 	printf("(s & .) :"); len = printf("%.s", "0123456789"); printf("|| len = %d\n", len);
 	printf("(s & .0):"); len = printf("%.0s", "0123456789"); printf("|| len = %d\n", len);
 	printf("(s & .1):"); len = printf("%.1s", "0123456789"); printf("|| len = %d\n", len);
@@ -42,6 +42,6 @@ int	main(void)
 	printf("(X & .1):"); len = printf("%.1X", 42); printf("|| len = %d\n", len);
 	printf("(X & .2):"); len = printf("%.2X", 42); printf("|| len = %d\n", len);
 	printf("(X & .3):"); len = printf("%.3X", 42); printf("|| len = %d\n", len);
-	printf("---- End of all bonus tests of printf ----\n");
+	printf("---- End of all bonus tests '.' of printf ----\n");
 	return (0);
 }
