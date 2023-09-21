@@ -7,12 +7,15 @@ int	main(void)
 	int	zero = 0;
 	int	max_int = 2147483647;
 	int	min_int = -2147483648;
+	char	*null_str;
 
+	null_str = NULL;
 	ft_printf("----Start of all simple tests of ft_printf----\n");
 	ft_printf("(c) Char: %c\n", 'a');
 	ft_printf("(c) Non-ascii char: %c\n", 'a');
 	ft_printf("(s) String: %s\n", "abc");
 	ft_printf("(s) Empty string: %s\n", "");
+	ft_printf("(s) NULL string: %s\n", null_str);
 	ft_printf("(i) Normal int: %i\n", 42);
 	ft_printf("(i) Zero: %i\n", zero);
 	ft_printf("(i) Negative int: %i\n", -42);

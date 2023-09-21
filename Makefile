@@ -23,10 +23,18 @@ TEST2_USER_OUTPUT = ${TEST2_DIR}/test2_user_output.txt
 TEST2_OK_OUTPUT = ${TEST2_DIR}/test2_ok_output.txt
 TEST2_RESULT = ${TEST2_DIR}/test2_result.txt
 
-TESTS_USER = ${TEST1_USER_OUTPUT} ${TEST2_USER_OUTPUT}
-TESTS_EXE = ${TEST1} ${TEST2}
-RESULTS = ${TEST1_RESULT} ${TEST2_RESULT}
-OBJ = ${OBJ_TEST1} ${OBJ_TEST2}
+TEST3_DIR = ${TESTS_DIR}/TEST3
+TEST3_FILE = ${TEST3_DIR}/test3.c
+OBJ_TEST3 = ${TEST3_FILE:.c=.o}
+TEST3 = test3_exe
+TEST3_USER_OUTPUT = ${TEST3_DIR}/test3_user_output.txt
+TEST3_OK_OUTPUT = ${TEST3_DIR}/test3_ok_output.txt
+TEST3_RESULT = ${TEST3_DIR}/test3_result.txt
+
+TESTS_USER = ${TEST1_USER_OUTPUT} ${TEST2_USER_OUTPUT} ${TEST3_USER_OUTPUT}
+TESTS_EXE = ${TEST1} ${TEST2} ${TEST3}
+RESULTS = ${TEST1_RESULT} ${TEST2_RESULT} ${TEST3_RESULT}
+OBJ = ${OBJ_TEST1} ${OBJ_TEST2} ${OBJ_TEST3}
 
 BONUS_DIR = ./bonus
 BONUS = ${BONUS_DIR}/bonus.c
@@ -45,9 +53,11 @@ ${TEST1}: ${OBJ_TEST1}
 	${GCC} -o $@ $< ${LIB_INSTRUCTION}
 ${TEST2}: ${OBJ_TEST2}
 	${GCC} -o $@ $< ${LIB_INSTRUCTION}
+${TEST3}: ${OBJ_TEST3}
+	${GCC} -o $@ $< ${LIB_INSTRUCTION}
 
 # runs all tests
-run: test1 test2 test3 test4
+run: test1 test2 test3
 
 # runs first tests
 test1: ${TEST1}
@@ -57,6 +67,10 @@ test1: ${TEST1}
 test2: ${TEST2}
 	./$< > ${TEST2_USER_OUTPUT}
 	-diff -s ${TEST2_USER_OUTPUT} ${TEST2_OK_OUTPUT} > ${TEST2_RESULT}
+
+test3: ${TEST3}
+	./$< > ${TEST3_USER_OUTPUT}
+	-diff -s ${TEST3_USER_OUTPUT} ${TEST3_OK_OUTPUT} > ${TEST3_RESULT}
 
 # others
 clean:

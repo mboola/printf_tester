@@ -1,8 +1,9 @@
-----Start of first tests of ft_printf----
+----Start of all simple tests of ft_printf----
 (c) Char: a
 (c) Non-ascii char: a
 (s) String: abc
 (s) Empty string: 
+(s) NULL string: (null)
 (i) Normal int: 42
 (i) Zero: 0
 (i) Negative int: -42
@@ -29,4 +30,4 @@
 (X) Max int: 7FFFFFFF
 (X) Min int: 80000000
 Percent: %
----- End of first tests of ft_printf ----
+---- End of all simple tests of ft_printf ----
