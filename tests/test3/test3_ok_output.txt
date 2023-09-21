@@ -1,1 +1,4 @@
-test
+----Start of ptr tests of ft_printf----
+0xffffffffffffffff
+---- End of ptr tests of ft_printf ----
+0xffffffffffffffff
