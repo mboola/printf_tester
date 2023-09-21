@@ -1,0 +1,31 @@
+----Start of all bonus tests of printf----
+(s & 1):012345|| len = 6
+(s & 2):012345|| len = 6
+(s & 3):012345|| len = 6
+(s & 10):    012345|| len = 10
+(d & 0):42|| len = 2
+(d & 1):42|| len = 2
+(d & 2):42|| len = 2
+(d & 3): 42|| len = 3
+(d & 10):        42|| len = 10
+(i & 0):42|| len = 2
+(i & 1):42|| len = 2
+(i & 2):42|| len = 2
+(i & 3): 42|| len = 3
+(i & 10):        42|| len = 10
+(u & 0):42|| len = 2
+(u & 1):42|| len = 2
+(u & 2):42|| len = 2
+(u & 3): 42|| len = 3
+(u & 10):        42|| len = 10
+(x & 0):2a|| len = 2
+(x & 1):2a|| len = 2
+(x & 2):2a|| len = 2
+(x & 3): 2a|| len = 3
+(x & 10):        2a|| len = 10
+(X & 0):2A|| len = 2
+(X & 1):2A|| len = 2
+(X & 2):2A|| len = 2
+(X & 3): 2A|| len = 3
+(X & 10):        2A|| len = 10
+---- End of all bonus tests of printf ----
