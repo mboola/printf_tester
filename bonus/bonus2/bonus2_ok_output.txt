@@ -1,4 +1,4 @@
-----Start of all bonus tests 'num' of printf----
+----Start of all bonus tests 'num' of ft_printf----
 (s & 1):012345|| len = 6
 (s & 2):012345|| len = 6
 (s & 3):012345|| len = 6
@@ -28,4 +28,4 @@
 (X & 2):2A|| len = 2
 (X & 3): 2A|| len = 3
 (X & 10):        2A|| len = 10
----- End of all bonus tests 'num' of printf ----
+---- End of all bonus tests 'num' of ft_printf ----

@@ -1,25 +1,28 @@
-----Start of all bonus tests '.' of printf----
+----Start of all bonus tests '.' of ft_printf----
+(c & .) :|| len = -1
 (s & .) :|| len = 0
 (s & .0):|| len = 0
 (s & .1):0|| len = 1
 (s & .2):01|| len = 2
+(s & .2 x2):0101|| len = 4
 (s & .3):012|| len = 3
 (s & .20):0123456789|| len = 10
-(d & .):42|| len = 2
-(d & .0):42|| len = 2
-(d & .1):42|| len = 2
-(d & .2):42|| len = 2
-(d & .3):042|| len = 3
-(i & .):42|| len = 2
-(i & .0):42|| len = 2
-(i & .1):42|| len = 2
-(i & .2):42|| len = 2
-(i & .3):042|| len = 3
 (u & .):42|| len = 2
 (u & .0):42|| len = 2
 (u & .1):42|| len = 2
 (u & .2):42|| len = 2
 (u & .3):042|| len = 3
+(p & .3):|| len = -1
+(i & .):42|| len = 2
+(i & .0):42|| len = 2
+(i & .1):42|| len = 2
+(i & .2):42|| len = 2
+(i & .3):042|| len = 3
+(d & .):42|| len = 2
+(d & .0):42|| len = 2
+(d & .1):42|| len = 2
+(d & .2):42|| len = 2
+(d & .3):042|| len = 3
 (x & .):2a|| len = 2
 (x & .0):2a|| len = 2
 (x & .1):2a|| len = 2
@@ -30,4 +33,5 @@
 (X & .1):2A|| len = 2
 (X & .2):2A|| len = 2
 (X & .3):02A|| len = 3
----- End of all bonus tests '.' of printf ----
+(% & .3):|| len = -1
+---- End of all bonus tests '.' of ft_printf ----

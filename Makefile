@@ -94,8 +94,8 @@ ${TEST2}: ${OBJ_TEST2}
 	${GCC} -o $@ $< ${LIB_INSTRUCTION}
 ${TEST3}: ${OBJ_TEST3}
 	${GCC} -o $@ $< ${LIB_INSTRUCTION}
-${BONUS1}: ${OBJ1_BONUS}
-	${GCC} -o $@ $< ${LIB_INSTRUCTION}
+${BONUS1}:
+	${CC} ${BONUS1_FILE} ${LIB} -o $@ -g
 ${BONUS2}: ${OBJ2_BONUS}
 	${GCC} -o $@ $< ${LIB_INSTRUCTION}
 ${BONUS3}: ${OBJ3_BONUS}
