@@ -1,7 +1,7 @@
 #VARIABLES
 CC = cc
 GCC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS =
 LIB = libftprintf.a
 LIB_INSTRUCTION = -L. -lftprintf
 
