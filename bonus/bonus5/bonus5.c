@@ -7,7 +7,11 @@ int	main(void)
 	int	len;
 
 	ft_printf("----Start of all bonus tests ' ' of ft_printf----\n");
-
+	//string
+	//ft_printf("(s & ' '    ):"); len = ft_printf("% s", "0123"); ft_printf("|| len = %d\n", len);
+	//ft_printf("(s & ' ' 1  ):"); len = ft_printf("% 1s", "0123"); ft_printf("|| len = %d\n", len);
+	//ft_printf("(s & ' ' 3  ):"); len = ft_printf("% 3s", "0123"); ft_printf("|| len = %d\n", len);
+	//fstring
 	//integers
 	ft_printf("(d & ' '    ):"); len = ft_printf("% d", 42); ft_printf("|| len = %d\n", len);
 	ft_printf("(d & ' '    ):"); len = ft_printf("% d", -42); ft_printf("|| len = %d\n", len);

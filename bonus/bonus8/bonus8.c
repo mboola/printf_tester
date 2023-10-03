@@ -108,7 +108,7 @@ int	main(void)
 	printf("(X & ' '2.10):"); len = printf("% 2.10X", -42); printf("|| len = %d\n", len);
 	//fhexadecimal
 
-		printf("(u & ' '    ):"); len = printf("% u", 42); printf("|| len = %d\n", len);
+	printf("(u & ' '    ):"); len = printf("% u", 42); printf("|| len = %d\n", len);
 	printf("(u & ' '    ):"); len = printf("% u", -42); printf("|| len = %d\n", len);
 	printf("(u & ' ' 1  ):"); len = printf("% 1u", 42); printf("|| len = %d\n", len);
 	printf("(u & ' ' 1  ):"); len = printf("% 1u", -42); printf("|| len = %d\n", len);
@@ -123,27 +123,12 @@ int	main(void)
 	printf("(u & ' '2.10):"); len = printf("% 2.10u", 42); printf("|| len = %d\n", len);
 	printf("(u & ' '2.10):"); len = printf("% 2.10u", -42); printf("|| len = %d\n", len);
 
-	ft_printft("(c &  ):"); len = ft_printft("% c", 'c'); ft_printft("|| len = %d\n", len);
-
-	ft_printft("(s & -3):"); len = ft_printft("%-3s", "012345"); ft_printft("|| len = %d\n", len);
-
-	ft_printft("(d & -2):"); len = ft_printft("%-2d", 42); ft_printft("|| len = %d\n", len);
-
-	ft_printft("(i & -3):"); len = ft_printft("%-3i", 42); ft_printft("|| len = %d\n", len);
-
-	ft_printft("(u & -2):"); len = ft_printft("%-2u", 42); ft_printft("|| len = %d\n", len);
-
-	ft_printft("(x & - ):"); len = ft_printft("%-x", 42); ft_printft("|| len = %d\n", len);
-	ft_printft("(x & -1):"); len = ft_printft("%-1x", 42); ft_printft("|| len = %d\n", len);
-	ft_printft("(x & -2):"); len = ft_printft("%-2x", 42); ft_printft("|| len = %d\n", len);
-	ft_printft("(x & -3):"); len = ft_printft("%-3x", 42); ft_printft("|| len = %d\n", len);
-	ft_printft("(x & -10):"); len = ft_printft("%-10x", 42); ft_printft("|| len = %d\n", len);
-
-	ft_printft("(X & - ):"); len = ft_printft("%-X", 42); ft_printft("|| len = %d\n", len);
-	ft_printft("(X & -1):"); len = ft_printft("%-1X", 42); ft_printft("|| len = %d\n", len);
-	ft_printft("(X & -2):"); len = ft_printft("%-2X", 42); ft_printft("|| len = %d\n", len);
-	ft_printft("(X & -3):"); len = ft_printft("%-3X", 42); ft_printft("|| len = %d\n", len);
-	ft_printft("(X & -10):"); len = ft_printft("%-10X", 42); ft_printft("|| len = %d\n", len);
+		printf("(c & +    ):"); len = printf("%+c", '0'); printf("|| len = %d\n", len);
+	printf("(p & +    ):"); len = printf("%+p", (void *) 42); printf("|| len = %d\n", len);
+	printf("(u & +    ):"); len = printf("%+u", 42); printf("|| len = %d\n", len);
+	printf("(x & +    ):"); len = printf("%+x", 42); printf("|| len = %d\n", len);
+	printf("(X & +    ):"); len = printf("%+X", 42); printf("|| len = %d\n", len);
+	
 	ft_printft("---- End of all bonus tests '#' of ft_printft ----\n");
 	return (0);
 }
