@@ -81,14 +81,25 @@ BONUS6_USER_OUTPUT = ${BONUS6_DIR}/bonus6_user_output.txt
 BONUS6_OK_OUTPUT = ${BONUS6_DIR}/bonus6_ok_output.txt
 BONUS6_RESULT = ${BONUS6_DIR}/bonus6_result.txt
 
+BONUS7_DIR = ${BONUS_DIR}/bonus7
+BONUS7_FILE = ${BONUS7_DIR}/bonus7.c
+OBJ7_BONUS = ${BONUS7_FILE:.c=.o}
+BONUS7 = bonus7_exe
+BONUS7_USER_OUTPUT = ${BONUS7_DIR}/bonus7_user_output.txt
+BONUS7_OK_OUTPUT = ${BONUS7_DIR}/bonus7_ok_output.txt
+BONUS7_RESULT = ${BONUS7_DIR}/bonus7_result.txt
+
 TESTS_USER	=	${TEST1_USER_OUTPUT} ${TEST2_USER_OUTPUT} ${TEST3_USER_OUTPUT} \
 				${BONUS1_USER_OUTPUT} ${BONUS2_USER_OUTPUT} ${BONUS3_USER_OUTPUT} \
-				${BONUS4_USER_OUTPUT} ${BONUS5_USER_OUTPUT} ${BONUS6_USER_OUTPUT}
-TESTS_EXE	=	${TEST1} ${TEST2} ${TEST3} ${BONUS1} ${BONUS2} ${BONUS3} ${BONUS4} ${BONUS5} ${BONUS6}
+				${BONUS4_USER_OUTPUT} ${BONUS5_USER_OUTPUT} ${BONUS6_USER_OUTPUT} \
+				${BONUS7_USER_OUTPUT}
+TESTS_EXE	=	${TEST1} ${TEST2} ${TEST3} ${BONUS1} ${BONUS2} ${BONUS3} ${BONUS4} \
+				${BONUS5} ${BONUS6} ${BONUS7}
 RESULTS		=	${TEST1_RESULT} ${TEST2_RESULT} ${TEST3_RESULT} ${BONUS1_RESULT} \
-				${BONUS2_RESULT} ${BONUS3_RESULT} ${BONUS4_RESULT} ${BONUS5_RESULT} ${BONUS6_RESULT}
+				${BONUS2_RESULT} ${BONUS3_RESULT} ${BONUS4_RESULT} ${BONUS5_RESULT} \
+				${BONUS6_RESULT} ${BONUS7_RESULT}
 OBJ			=	${OBJ_TEST1} ${OBJ_TEST2} ${OBJ_TEST3} ${OBJ1_BONUS} ${OBJ2_BONUS} \
-				${OBJ3_BONUS} ${OBJ4_BONUS} ${OBJ5_BONUS} ${OBJ6_BONUS}
+				${OBJ3_BONUS} ${OBJ4_BONUS} ${OBJ5_BONUS} ${OBJ6_BONUS} ${OBJ7_BONUS}
 
 #RULES
 
@@ -118,9 +129,11 @@ ${BONUS5}: ${OBJ5_BONUS}
 	${GCC} -o $@ $< ${LIB_INSTRUCTION}
 ${BONUS6}: ${OBJ6_BONUS}
 	${GCC} -o $@ $< ${LIB_INSTRUCTION}
+${BONUS7}: ${OBJ7_BONUS}
+	${GCC} -o $@ $< ${LIB_INSTRUCTION}
 
 # runs all tests
-run: test1 test2 test3 bonus1 bonus2 bonus3 bonus4 bonus5 bonus6
+run: test1 test2 test3 bonus1 bonus2 bonus3 bonus4 bonus5 bonus6 bonus7
 
 # runs first tests
 test1: ${TEST1}
@@ -157,7 +170,11 @@ bonus5: ${BONUS5}
 
 bonus6: ${BONUS6}
 	./$< > ${BONUS6_USER_OUTPUT}
-	-diff -s ${BONUS6_USER_OUTPUT} ${BONUS6_OK_OUTPUT} > ${BONUS6_RESULT}	
+	-diff -s ${BONUS6_USER_OUTPUT} ${BONUS6_OK_OUTPUT} > ${BONUS6_RESULT}
+
+bonus7: ${BONUS7}
+	./$< > ${BONUS7_USER_OUTPUT}
+	-diff -s ${BONUS7_USER_OUTPUT} ${BONUS7_OK_OUTPUT} > ${BONUS7_RESULT}	
 
 # others
 clean:
@@ -174,4 +191,4 @@ display:
 results:
 	cat ${RESULTS}
 
-.PHONY: all run clean fclean test1 test2 test3 bonus1 bonus2 bonus3 display results
+.PHONY: all run clean fclean test1 test2 test3 bonus1 bonus2 bonus3 bonus4 bonus5 bonus6 bonus7 display results

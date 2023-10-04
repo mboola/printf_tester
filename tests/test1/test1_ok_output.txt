@@ -1,5 +1,11 @@
 ----Start of all simple tests of ft_printf----
 (c) Char: a
+(c) Char: +
+(c) Char: -
+(c) Char: 0
+(c) Char: 1
+(c) Char: 2
+(c)(c) Char: +1
 (c) Non-ascii char: a
 (s) String: abc
 (s) Empty string: 

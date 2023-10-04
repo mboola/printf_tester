@@ -12,6 +12,12 @@ int	main(void)
 	null_str = NULL;
 	ft_printf("----Start of all simple tests of ft_printf----\n");
 	ft_printf("(c) Char: %c\n", 'a');
+	ft_printf("(c) Char: %c\n", '+');
+	ft_printf("(c) Char: %c\n", '-');
+	ft_printf("(c) Char: %c\n", '0');
+	ft_printf("(c) Char: %c\n", '1');
+	ft_printf("(c) Char: %c\n", '2');
+	ft_printf("(c)(c) Char: %c%c\n", '+', '1');
 	ft_printf("(c) Non-ascii char: %c\n", 'a');
 	ft_printf("(s) String: %s\n", "abc");
 	ft_printf("(s) Empty string: %s\n", "");
