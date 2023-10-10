@@ -8,15 +8,17 @@ int	main(void)
 	int	max_int = 2147483647;
 	int	min_int = -2147483648;
 	char	*null_str;
+	int	len;
 
 	null_str = NULL;
 	ft_printf("----Start of all simple tests of ft_printf----\n");
 	ft_printf("(c) Char: %c\n", 'a');
 	ft_printf("(c) Char: %c\n", '+');
 	ft_printf("(c) Char: %c\n", '-');
-	ft_printf("(c) Char: %c\n", '0');
-	ft_printf("(c) Char: %c\n", '1');
-	ft_printf("(c) Char: %c\n", '2');
+	len = ft_printf("(c) Char: %c\n", '0'); ft_printf("|| len = %d\n", len);
+	len = ft_printf("(c) Char: %c %c\n", 0, '1'); ft_printf("|| len = %d\n", len);
+	len = ft_printf("(c) Char: %c %c\n", '1', 0); ft_printf("|| len = %d\n", len);
+	len = ft_printf("(c) Char: %c %c %c\n", 0, '1', '2'); ft_printf("|| len = %d\n", len);
 	ft_printf("(c)(c) Char: %c%c\n", '+', '1');
 	ft_printf("(c) Non-ascii char: %c\n", 'a');
 	ft_printf("(s) String: %s\n", "abc");
