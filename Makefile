@@ -89,30 +89,39 @@ BONUS7_USER_OUTPUT = ${BONUS7_DIR}/bonus7_user_output.txt
 BONUS7_OK_OUTPUT = ${BONUS7_DIR}/bonus7_ok_output.txt
 BONUS7_RESULT = ${BONUS7_DIR}/bonus7_result.txt
 
+BONUS8_DIR = ${BONUS_DIR}/bonus8
+BONUS8_FILE = ${BONUS8_DIR}/bonus8.c
+OBJ8_BONUS = ${BONUS8_FILE:.c=.o}
+BONUS8 = bonus8_exe
+BONUS8_USER_OUTPUT = ${BONUS8_DIR}/bonus8_user_output.txt
+BONUS8_OK_OUTPUT = ${BONUS8_DIR}/bonus8_ok_output.txt
+BONUS8_RESULT = ${BONUS8_DIR}/bonus8_result.txt
+
 TESTS_USER	=	${TEST1_USER_OUTPUT} ${TEST2_USER_OUTPUT} ${TEST3_USER_OUTPUT} \
 				${BONUS1_USER_OUTPUT} ${BONUS2_USER_OUTPUT} ${BONUS3_USER_OUTPUT} \
 				${BONUS4_USER_OUTPUT} ${BONUS5_USER_OUTPUT} ${BONUS6_USER_OUTPUT} \
-				${BONUS7_USER_OUTPUT}
+				${BONUS7_USER_OUTPUT} ${BONUS8_USER_OUTPUT}
 TESTS_EXE	=	${TEST1} ${TEST2} ${TEST3} ${BONUS1} ${BONUS2} ${BONUS3} ${BONUS4} \
-				${BONUS5} ${BONUS6} ${BONUS7}
+				${BONUS5} ${BONUS6} ${BONUS7} ${BONUS8}
 RESULTS		=	${TEST1_RESULT} ${TEST2_RESULT} ${TEST3_RESULT} ${BONUS1_RESULT} \
 				${BONUS2_RESULT} ${BONUS3_RESULT} ${BONUS4_RESULT} ${BONUS5_RESULT} \
-				${BONUS6_RESULT} ${BONUS7_RESULT}
+				${BONUS6_RESULT} ${BONUS7_RESULT} ${BONUS8_RESULT}
 OBJ			=	${OBJ_TEST1} ${OBJ_TEST2} ${OBJ_TEST3} ${OBJ1_BONUS} ${OBJ2_BONUS} \
-				${OBJ3_BONUS} ${OBJ4_BONUS} ${OBJ5_BONUS} ${OBJ6_BONUS} ${OBJ7_BONUS}
+				${OBJ3_BONUS} ${OBJ4_BONUS} ${OBJ5_BONUS} ${OBJ6_BONUS} ${OBJ7_BONUS} \
+				${OBJ8_BONUS}
 
 #RULES
 
 # how to compile the tests
 %.o: %.c Makefile
-	${CC} ${CFLAGS} -c $< -o $@
+	${CC} ${CFLAGS} -c $< -o $@ -g
 
 # compiles all tests with .a
 all: ${TESTS_EXE}
 
 # create the executable
 ${TEST1}: ${OBJ_TEST1}
-	${GCC} -o $@ $< ${LIB_INSTRUCTION}
+	${GCC} -o $@ $< ${LIB_INSTRUCTION} -g
 ${TEST2}: ${OBJ_TEST2}
 	${GCC} -o $@ $< ${LIB_INSTRUCTION}
 ${TEST3}: ${OBJ_TEST3}
@@ -131,9 +140,11 @@ ${BONUS6}: ${OBJ6_BONUS}
 	${GCC} -o $@ $< ${LIB_INSTRUCTION}
 ${BONUS7}: ${OBJ7_BONUS}
 	${GCC} -o $@ $< ${LIB_INSTRUCTION}
+${BONUS8}: ${OBJ8_BONUS}
+	${GCC} -o $@ $< ${LIB_INSTRUCTION}
 
 # runs all tests
-run: test1 test2 test3 bonus1 bonus2 bonus3 bonus4 bonus5 bonus6 bonus7
+run: test1 test2 test3 bonus1 bonus2 bonus3 bonus4 bonus5 bonus6 bonus7 bonus8
 
 # runs first tests
 test1: ${TEST1}
@@ -175,6 +186,10 @@ bonus6: ${BONUS6}
 bonus7: ${BONUS7}
 	./$< > ${BONUS7_USER_OUTPUT}
 	-diff -s ${BONUS7_USER_OUTPUT} ${BONUS7_OK_OUTPUT} > ${BONUS7_RESULT}	
+
+bonus8: ${BONUS8}
+	./$< > ${BONUS8_USER_OUTPUT}
+	-diff -s ${BONUS8_USER_OUTPUT} ${BONUS8_OK_OUTPUT} > ${BONUS8_RESULT}	
 
 # others
 clean:

@@ -1,0 +1,7 @@
+----Start of all bonus overwrite tests of ft_printf----
+(% & 0 ):%|| len = 1
+(% & 01):%|| len = 1
+(% & 02):%|| len = 1
+(% & 1):%|| len = 1
+(% & 2):%|| len = 1
+---- End of all bonus overwrite tests of ft_printf ----
