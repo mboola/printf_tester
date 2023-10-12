@@ -4,4 +4,9 @@
 (% & 02):%|| len = 1
 (% & 1):%|| len = 1
 (% & 2):%|| len = 1
+(c &  . ):a|| len = 1
+(c & 3.2):  a|| len = 3
+(c &  0 ):a|| len = 1
+(c &  3 ):  a|| len = 3
+(c &03.2):  a|| len = 3
 ---- End of all bonus overwrite tests of ft_printf ----

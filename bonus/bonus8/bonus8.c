@@ -15,6 +15,13 @@ int	main(void)
 	ft_printf("(%% & 2):"); len = ft_printf("%2%"); ft_printf("|| len = %d\n", len);
 	//fpercentage
 	//chars
+	ft_printf("(c &  . ):"); len = ft_printf("%.c", 'a'); ft_printf("|| len = %d\n", len);
+	ft_printf("(c & 3.2):"); len = ft_printf("%3.2c", 'a'); ft_printf("|| len = %d\n", len);
+	ft_printf("(c &  0 ):"); len = ft_printf("%0c", 'a'); ft_printf("|| len = %d\n", len);
+	ft_printf("(c &  3 ):"); len = ft_printf("%3c", 'a'); ft_printf("|| len = %d\n", len);
+	ft_printf("(c &03.2):"); len = ft_printf("%03.2c", 'a'); ft_printf("|| len = %d\n", len);
+	//fchars
+	//chars
 	/*
 	ft_printf("(c &  0 ):"); len = ft_printf("%0c", 'c'); ft_printf("|| len = %d\n", len);
 	ft_printf("(c &  01):"); len = ft_printf("%01c", 'c'); ft_printf("|| len = %d\n", len);
