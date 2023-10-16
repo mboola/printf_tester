@@ -53,16 +53,23 @@ int	main(void)
 	ft_printf("(s & ' '7.6):"); len = ft_printf("% 7.6s", "012345"); ft_printf("|| len = %d\n", len);
 	ft_printf("(s & ' '10):"); len = ft_printf("% 10s", "012345"); ft_printf("|| len = %d\n", len);
 	ft_printf("(s & ' '15.10):"); len = ft_printf("% 15.10s", "012345"); ft_printf("|| len = %d\n", len);
+	ft_printf("(s & .03 NULL):"); len = ft_printf("%.03s", NULL); ft_printf("|| len = %d\n", len);
+	ft_printf("(s & .09 NULL):"); len = ft_printf("%.09s", NULL); ft_printf("|| len = %d\n", len);
+	ft_printf("(s & 3.1 NULL):"); len = ft_printf("%3.1s", NULL); ft_printf("|| len = %d\n", len);
+	ft_printf("(s & 3.6 NULL):"); len = ft_printf("%3.6s", NULL); ft_printf("|| len = %d\n", len);
+	ft_printf("(s & 9.1 NULL):"); len = ft_printf("%9.1s", NULL); ft_printf("|| len = %d\n", len);
+	ft_printf("(s &20.6 NULL):"); len = ft_printf("%20.6s", NULL); ft_printf("|| len = %d\n", len);
+	ft_printf("(s &-3.1 NULL):"); len = ft_printf("%-3.1s", NULL); ft_printf("|| len = %d\n", len);
+	ft_printf("(s &-3.8 NULL):"); len = ft_printf("%-3.8s", NULL); ft_printf("|| len = %d\n", len);
+	ft_printf("(s &-9.1 NULL):"); len = ft_printf("%-3.1s", NULL); ft_printf("|| len = %d\n", len);
+	ft_printf("(s &-10.8NULL):"); len = ft_printf("%-10.8s", NULL); ft_printf("|| len = %d\n", len);
+
 	//fstrings
 	/*
+	//pointers
 	ft_printf("(p &   . ):"); len = ft_printf("%.3p", (void *)42); ft_printf("|| len = %d\n", len);
 	ft_printf("(p &   .3):"); len = ft_printf("%.3p", (void *)42); ft_printf("|| len = %d\n", len);
 	ft_printf("(p &  5.3):"); len = ft_printf("%.3p", (void *)42); ft_printf("|| len = %d\n", len);
-	//ferrors
-	*/
-	/*
-	//chars
-	//pointers
 	ft_printf("(p &  0):"); len = ft_printf("%0p", (void *)42); ft_printf("|| len = %d\n", len);
 	ft_printf("(p &  0):"); len = ft_printf("%0p", (void *)-42); ft_printf("|| len = %d\n", len);
 	ft_printf("(p & 01):"); len = ft_printf("%01p", (void *)42); ft_printf("|| len = %d\n", len);
