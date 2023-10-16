@@ -36,9 +36,14 @@ int	main(void)
 	ft_printf("(c &' '10):"); len = ft_printf("% 10c", 'c'); ft_printf("|| len = %d\n", len);
 	//fchars
 	//strings
-/*	ft_printf("(s &  0):"); len = ft_printf("%0s", "0123456789"); ft_printf("|| len = %d\n", len);
-	ft_printf("(s & 01):"); len = ft_printf("%01s", "0123456789"); ft_printf("|| len = %d\n", len);
-	ft_printf("(s & 010):"); len = ft_printf("%010s", "0123456789"); ft_printf("|| len = %d\n", len);
+	ft_printf("(s &   0 ):"); len = ft_printf("%0s", "0123456789"); ft_printf("|| len = %d\n", len);
+	ft_printf("(s &  01 ):"); len = ft_printf("%01s", "0123456789"); ft_printf("|| len = %d\n", len);
+	ft_printf("(s &  010):"); len = ft_printf("%010s", "0123456789"); ft_printf("|| len = %d\n", len);
+	ft_printf("(s &  010):"); len = ft_printf("%010s", "012345"); ft_printf("|| len = %d\n", len);
+	ft_printf("(s & 04.2):"); len = ft_printf("%04.2s", "012"); ft_printf("|| len = %d\n", len);
+	ft_printf("(s & 04.2):"); len = ft_printf("%04.2s", "012345"); ft_printf("|| len = %d\n", len);
+	ft_printf("(s & 02.4):"); len = ft_printf("%02.4s", "012"); ft_printf("|| len = %d\n", len);
+	ft_printf("(s & 02.4):"); len = ft_printf("%02.4s", "012345"); ft_printf("|| len = %d\n", len);
 	ft_printf("(s & ' '  ):"); len = ft_printf("% s", "012345"); ft_printf("|| len = %d\n", len);
 	ft_printf("(s & ' ' 1):"); len = ft_printf("% 1s", "012345"); ft_printf("|| len = %d\n", len);
 	ft_printf("(s & ' ' 2):"); len = ft_printf("% 2s", "012345"); ft_printf("|| len = %d\n", len);
@@ -48,7 +53,7 @@ int	main(void)
 	ft_printf("(s & ' '7.6):"); len = ft_printf("% 7.6s", "012345"); ft_printf("|| len = %d\n", len);
 	ft_printf("(s & ' '10):"); len = ft_printf("% 10s", "012345"); ft_printf("|| len = %d\n", len);
 	ft_printf("(s & ' '15.10):"); len = ft_printf("% 15.10s", "012345"); ft_printf("|| len = %d\n", len);
-*/	//fstrings
+	//fstrings
 	/*
 	ft_printf("(p &   . ):"); len = ft_printf("%.3p", (void *)42); ft_printf("|| len = %d\n", len);
 	ft_printf("(p &   .3):"); len = ft_printf("%.3p", (void *)42); ft_printf("|| len = %d\n", len);
