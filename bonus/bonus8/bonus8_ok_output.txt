@@ -50,4 +50,6 @@
 (s &-3.8 NULL):(null)|| len = 6
 (s &-9.1 NULL):   || len = 3
 (s &-10.8NULL):(null)    || len = 10
+(i & 08.5 ):   00042|| len = 8
+(i & 08.5 ):  -00042|| len = 8
 ---- End of all bonus overwrite tests of ft_printf ----
