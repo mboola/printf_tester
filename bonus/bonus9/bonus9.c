@@ -27,6 +27,21 @@ int	main(void)
 	ft_printf("(d 2.2  t9):"); len = ft_printf("t9 %2.2d}", 10); ft_printf("|| len = %d\n", len);
 	ft_printf("(d 2.2 t10):"); len = ft_printf("t10 %2.2d}", -10); ft_printf("|| len = %d\n", len);
 	ft_printf("(d  10 t14):"); len = ft_printf("t14 %10d}", 1000); ft_printf("|| len = %d\n", len);
+	
+	ft_printf("(x  #  0  ):"); len = ft_printf(" %#x ", 0); ft_printf("|| len = %d\n", len);
+	
+	ft_printf("(%%   5   ):"); len = ft_printf("%5%"); ft_printf("|| len = %d\n", len);
+	ft_printf("(%%   -5  ):"); len = ft_printf("%-5%"); ft_printf("|| len = %d\n", len);
+	ft_printf("(%%  -05  ):"); len = ft_printf("%-05%"); ft_printf("|| len = %d\n", len);
+	ft_printf("(s   . 03 ):"); len = ft_printf("%.03s", NULL); ft_printf("|| len = %d\n", len);
+	ft_printf("(s   3.1  ):"); len = ft_printf("%3.1s", NULL); ft_printf("|| len = %d\n", len);
+	ft_printf("(s   9.1  ):"); len = ft_printf("%9.1s", NULL); ft_printf("|| len = %d\n", len);
+	ft_printf("(s   -3.1 ):"); len = ft_printf("%-3.1s", NULL); ft_printf("|| len = %d\n", len);
+	ft_printf("(s   -9.1 ):"); len = ft_printf("%-9.1s", NULL); ft_printf("|| len = %d\n", len);
+	ft_printf("(s   .4   ):"); len = ft_printf("%.4s", NULL); ft_printf("|| len = %d\n", len);
+	ft_printf("(s   50.2 ):"); len = ft_printf("%50.2s", NULL); ft_printf("|| len = %d\n", len);
+	ft_printf("(%%   12  ):"); len = ft_printf("%12%", NULL); ft_printf("|| len = %d\n", len);
+	ft_printf("(%%   -12 ):"); len = ft_printf("%-12%", NULL); ft_printf("|| len = %d\n", len);
 
 	ft_printf("----End of lo que paco me dice que no pasa of ft_printf----\n");
 	return (0);

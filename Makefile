@@ -4,6 +4,7 @@ GCC = gcc
 CFLAGS =
 LIB = libftprintf.a
 LIB_INSTRUCTION = -L. -lftprintf
+DEBUG	=	#-g
 
 TESTS_DIR = ./tests
 
@@ -122,36 +123,36 @@ OBJ			=	${OBJ_TEST1} ${OBJ_TEST2} ${OBJ_TEST3} ${OBJ1_BONUS} ${OBJ2_BONUS} \
 
 # how to compile the tests
 %.o: %.c Makefile
-	${CC} ${CFLAGS} -c $< -o $@ -g
+	${CC} ${CFLAGS} -c $< -o $@ ${DEBUG}
 
 # compiles all tests with .a
 all: ${TESTS_EXE}
 
 # create the executable
 ${TEST1}: ${OBJ_TEST1}
-	${GCC} -o $@ $< ${LIB_INSTRUCTION} -g
+	${GCC} -o $@ $< ${LIB_INSTRUCTION} ${DEBUG}
 ${TEST2}: ${OBJ_TEST2}
-	${GCC} -o $@ $< ${LIB_INSTRUCTION}
+	${GCC} -o $@ $< ${LIB_INSTRUCTION} ${DEBUG}
 ${TEST3}: ${OBJ_TEST3}
-	${GCC} -o $@ $< ${LIB_INSTRUCTION}
-${BONUS1}:
-	${CC} ${BONUS1_FILE} ${LIB} -o $@ -g
+	${GCC} -o $@ $< ${LIB_INSTRUCTION} ${DEBUG}
+${BONUS1}: ${OBJ1_BONUS}
+	${GCC} -o $@ $< ${LIB_INSTRUCTION} ${DEBUG}
 ${BONUS2}: ${OBJ2_BONUS}
-	${GCC} -o $@ $< ${LIB_INSTRUCTION}
+	${GCC} -o $@ $< ${LIB_INSTRUCTION} ${DEBUG}
 ${BONUS3}: ${OBJ3_BONUS}
-	${GCC} -o $@ $< ${LIB_INSTRUCTION}
+	${GCC} -o $@ $< ${LIB_INSTRUCTION} ${DEBUG}
 ${BONUS4}: ${OBJ4_BONUS}
-	${GCC} -o $@ $< ${LIB_INSTRUCTION}
+	${GCC} -o $@ $< ${LIB_INSTRUCTION} ${DEBUG}
 ${BONUS5}: ${OBJ5_BONUS}
-	${GCC} -o $@ $< ${LIB_INSTRUCTION}
+	${GCC} -o $@ $< ${LIB_INSTRUCTION} ${DEBUG}
 ${BONUS6}: ${OBJ6_BONUS}
-	${GCC} -o $@ $< ${LIB_INSTRUCTION}
+	${GCC} -o $@ $< ${LIB_INSTRUCTION} ${DEBUG}
 ${BONUS7}: ${OBJ7_BONUS}
-	${GCC} -o $@ $< ${LIB_INSTRUCTION}
+	${GCC} -o $@ $< ${LIB_INSTRUCTION} ${DEBUG}
 ${BONUS8}: ${OBJ8_BONUS}
-	${GCC} -o $@ $< ${LIB_INSTRUCTION}
+	${GCC} -o $@ $< ${LIB_INSTRUCTION} ${DEBUG}
 ${BONUS9}: ${OBJ9_BONUS}
-	${GCC} -o $@ $< ${LIB_INSTRUCTION}
+	${GCC} -o $@ $< ${LIB_INSTRUCTION} ${DEBUG}
 
 # runs all tests
 run: test1 test2 test3 bonus1 bonus2 bonus3 bonus4 bonus5 bonus6 bonus7 bonus8 bonus9
